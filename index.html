@@ -10,7 +10,7 @@
 
     <a-scene 
 	vr-mode-ui='enabled: false' 
-	arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' 
+	arjs='sourceType: webcam; videoTexture: true; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;' 
 	renderer='antialias: true; alpha: true'>
 
     <a-camera 
@@ -18,19 +18,18 @@
 	rotation-reader>
     </a-camera>
 
-    <a-entity 
+<!--    <a-entity 
 	material='color: red' 
 	geometry='primitive: box' 
 	gps-new-entity-place="latitude: -34.994244; longitude: 138.626630;" 
 	scale="10 10 10" 
 	distance="2">
     </a-entity>
+-->
 
-    <a-box 
-	material="color: yellow" 
-	gps-new-entity-place="-34.994244; longitude: 138.626630;"
-	scale="10 10 10" 
-	distance="5"/>
+	<a-entity glb-model="./assets/cakegirl_idle.glb" rotation="0 180 0" scale="0.5 0.5 0.5" 
+	gps-new-entity-place="latitude: -34.994244; longitude: 138.626630;" 
+	animation-mixer/>
 
       <a-text
         value="This content will always face you."
@@ -43,6 +42,8 @@
 
 </body>
 </html>
+
+
 
 
 
