@@ -23,32 +23,37 @@
     </a-entity>
 -->
 
-
+<!-- 
 	<a-entity 
 	  collada-model=”url(assets/cakegirl_idle.dae)”
 	  scale="0.5 0.5 0.5
-	  gps-new-entity-place="latitude: -34.994244; longitude: 138.626630;" 
+	  gps-new-entity-place="latitude: -34.92420435441609; longitude: 138.60095182058066;" 
 	  animation-mixer="loop: repeat;"
 	>
 	</a-entity>
-
-<!-- 
-	<a-entity glb-model="assets/cakegirl_idle.glb" rotation="0 180 0" scale="0.5 0.5 0.5" 
-	gps-new-entity-place="latitude: -34.994244; longitude: 138.626630;" 
-	animation-mixer="loop: repeat;">
-	</a-entity>
 -->
 
-      <a-text
-        value="This content will always face you."
-        look-at="gps-new-camera"
-        scale="50 50 50"
-        gps-entity-place="latitude: -34.994244; longitude: 138.626630;"> 
-      </a-text>
+	<a-entity gltf-model="assets/cakegorl_collada.gltf" rotation="0 180 0" scale="1 1 1" 
+	  gps-new-entity-place="latitude: -34.92520435441609; longitude: 138.60195182058066;
+	  animation-mixer="loop: repeat;">
+	</a-entity>
+
+<--! To see the model clearly, I would recommend an offset of around 0.001 degrees in any direction for both the latitude and longitude -->
+
+
+	<a-text 
+          value="Amidst the greenery, a Victorian grace, ​
+		A glassy gem, a tropical embrace."
+          look-at="gps-new-camera"
+          scale="10 10 10"
+	  width="0.5"
+	  font="roboto"
+	  gps-new-entity-place="latitude: -34.92520435441609; longitude: 138.60195182058066;
+	</a-text>
 
 
     <a-camera 
-	gps-new-camera='gpsMinDistance: 2' 
+	gps-new-camera='gpsMinDistance: 1' 
 	rotation-reader>
     </a-camera>
 
