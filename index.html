@@ -10,6 +10,9 @@
   </head>
 
   <body>
+	<a-camera 
+	  gps-new-camera="gpsMinDistance: 1">
+	</a-camera>
     <a-scene 
 	vr-mode-ui='enabled: false' 
 	embedded arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false; 
@@ -27,10 +30,7 @@
  	</a-text>
 
 
-	<a-camera 
-	  gps-new-camera="gpsMinDistance: 1" 
-	  rotation-reader>
-	</a-camera>
+
 
      </a-scene>
 
