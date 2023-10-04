@@ -10,6 +10,27 @@
   </head>
 
   <body>
+
+<!-- A-Frame Component Script for Rotation Reader used on a-camera -->
+    <script>
+AFRAME.registerComponent('rotation-reader', {
+  /**
+   * We use IIFE (immediately-invoked function expression) to only allocate one
+   * vector or euler and not re-create on every tick to save memory.
+   */
+  tick: (function () {
+    var position = new THREE.Vector3();
+    var quaternion = new THREE.Quaternion();
+
+    return function () {
+      this.el.object3D.getWorldPosition(position);
+      this.el.object3D.getWorldQuaternion(quaternion);
+      // position and rotation now contain vector and quaternion in world space.
+    };
+  })()
+});
+    </script>
+
     <a-scene 
 	vr-mode-ui="enabled: false" 
 	embedded arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
@@ -27,7 +48,9 @@
 	  gps-new-entity-place="latitude: -34.99517684965004; longitude: 138.62742047617717;">
  	</a-text>
 
-    <a-camera gps-new-camera rotation-reader></a-camera>
+    <a-camera 
+	gps-new-camera="gpsMinDistance: 5" 
+	rotation-reader></a-camera>
 
      </a-scene>
 
