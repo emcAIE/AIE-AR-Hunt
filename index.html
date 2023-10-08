@@ -15,16 +15,17 @@
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'>
 
 	<!-- CAMERA -->
-        <a-camera gps-new-camera='simulateLatitude: -34.99517684965004; simulateLongitude: 138.62742047617717' rotation-reader></a-camera>
+        <a-camera gps-new-camera='simulateLatitude: -34.99517684965004; simulateLongitude: 138.62742047617717;' rotation-reader></a-camera>
 
       <!-- TEXT CLUE -->
 	<a-text 
           value="Amidst the greenery, a Victorian grace, \n
 		A glassy gem, a tropical embrace."
           look-at="gps-new-camera"
-          scale="100 100 100"
+          scale="75 75 75"
 	  width="0.5"
 	  font="roboto"
+	  color="#000"
 	  gps-new-entity-place="latitude: -34.99517684965004; longitude: 138.62742047617717;">
  	</a-text>
 
