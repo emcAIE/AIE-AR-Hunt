@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test 19 TEXT</title>
+    <title>Test 20 TEXT</title>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,12 +18,18 @@
 
 	
       <!-- TEXT CLUE -->
-<a-entity
-  text="value: Hello, A-Frame!; color: #BBB"
-  position="-0.9 0.2 0"
-  scale="1.5 1.5 1.5"
-          look-at="gps-new-camera"
+	<a-entity text=""Amidst the greenery, a Victorian grace, \n
+		A glassy gem, a tropical embrace.; color: #BBB"
+		  geometry="primitive: box; width: 0.5; height: 0.7; depth: 0.1"
+		  position="-0.9 0.2 0"
+		  scale="1.5 1.5 1.5"
 	  gps-new-entity-place="latitude: -34.99517684965004; longitude: 138.62742047617717;"></a-entity>
+
+<a-entity geometry="primitive: sphere; radius: 1.5"
+          light="type: point; color: white; intensity: 2"
+          material="color: white; shader: flat; src: glow.jpg"
+          position="0 0 -5"></a-entity>
+
 
 	<a-text 
           value="Amidst the greenery, a Victorian grace, \n
