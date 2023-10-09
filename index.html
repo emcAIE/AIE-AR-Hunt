@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test 27 TEXT</title>
+    <title>Test 28 TEXT</title>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
@@ -40,22 +40,33 @@ AFRAME.registerComponent('rotation-reader', {
 
 <a-entity text="Amidst the greenery, a Victorian grace, \n
 		A glassy gem, a tropical embrace.; color: #BBB"
-  position="-0.9 0.2 -3"
+  position="-0.9 0 0"
   scale="1.5 1.5 1.5"
 		  gps-new-entity-place="latitude: -34.92518165403186; longitude: 138.60163075799363;">
 	</a-entity>
 
 
+ <!-- TEXT CLUE HINDMARSH SQUARE -->
+	<a-text value="This will always face the user." look-at="gps-new-camera" scale="75 75 75"  
+		gps-new-entity-place="latitude: -34.9253967687472; longitude: 138.6062636152023;"></a-text>	
 
+<a-entity text="Amidst the greenery, a Victorian grace, \n
+		A glassy gem, a tropical embrace.; color: #BBB"
+  position="-0.9 0 0"
+  scale="1.5 1.5 1.5"
+		  gps-new-entity-place="latitude: -34.9253967687472; longitude: 138.6062636152023;">
+	</a-entity>
 
 
 
 <!-- CAMERA -->
-        <a-camera gps-new-camera rotation-reader></a-camera>
+        <a-camera gps-new-camera rotation-reader gpsMinDistance="2"></a-camera>
  
     </a-scene>
 
-<!-- GPS coordinates for deck gps-new-entity-place="latitude: -34.99517684965004; longitude: 138.62742047617717;" -->
+<!-- GPS coordinates for deck  gps-new-entity-place="latitude: -34.99517684965004; longitude: 138.62742047617717;" -->
+
+<!-- GPS coordinates for Hindmarsh Square  gps-new-entity-place="latitude: -34.9253967687472; longitude: 138.6062636152023;" -->
 
 <!-- <a-entity geometry="primitive: cylinder; height: 0.1; radius: 1"
           material="color: #999; shader: flat;"
