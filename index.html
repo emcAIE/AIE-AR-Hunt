@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test 22 20231010</title>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <title>Test 23 20231010</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+    <script src="https://github.com/AR-js-org/AR.js/tree/master/aframe/build/aframe-ar-new-location-only.js"></script>
 </head>
 <body>
-    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
 
-        <!-- Fixed camera -->
+        <!-- Fixed camera 
         <a-entity id="fixed-camera" camera position="0 1.6 0" look-controls></a-entity>
+	-->
+
+        <!-- Updated camera -->
+	<a-camera id='camera1' look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 3'> </a-camera>
 
         <!-- Geolocation entity -->
-        <a-entity id="geolocation-entity" gps-entity-place="latitude: -34.9942069326562; longitude: 138.62660484713578;">
+        <a-entity id="geolocation-entity" gps-new-entity-place="latitude: -34.9942069326562; longitude: 138.62660484713578;">
 
             <!-- Text object on the box with line breaks -->
             <a-text value="Amidst the greenery, a Victorian grace,\nA glassy gem, a tropical embrace." position="0 0 -6" color="black" align="center" scale="0.5 0.5 0.5"  wrap-count="15"></a-text>
