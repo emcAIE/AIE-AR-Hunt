@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test 18 20231010</title>
+    <title>Test 19 20231010</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
 <body>
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+
+        <!-- Fixed camera -->
+        <a-entity id="fixed-camera" camera position="0 1.6 0"></a-entity>
 
         <!-- Geolocation entity -->
         <a-entity id="geolocation-entity" gps-entity-place="latitude: -34.92618165403186; longitude: 138.60263075799363;">
@@ -19,8 +22,7 @@
             <a-box position="0 0 -6.2" width="3" height="2" depth="0.1" color="white"></a-box>
         </a-entity>
 
-        <!-- Fixed camera -->
-        <a-entity id="fixed-camera" camera position="0 1.6 0"></a-entity>
+
 
     </a-scene>
 </body>
