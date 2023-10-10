@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Test 3 20231010</title>
+    <title>Test 4 20231010</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 </head>
@@ -12,14 +11,18 @@
 
         <!-- Geolocation entity -->
         <a-entity id="geolocation-entity" gps-new-entity-place="latitude: -34.92518165403186; longitude: 138.60163075799363;">
-            <!-- Text object -->
-            <a-text value=Amidst the greenery, a Victorian grace, \n
-		A glassy gem, a tropical embrace." position="0 0 -3" color="black" align="center" scale="1 1 1"></a-text>
+            <!-- Create a box for the text -->
+            <a-box position="0 0 -2" width="4" height="2" depth="0.1" color="white"></a-box>
+            <!-- Text object on the box with line breaks for wrapping -->
+            <a-text value="Amidst the greenery,<br>a Victorian grace,<br>A glassy gem,<br>a tropical embrace." position="0 0 -1.9" color="black" align="center" scale="2 2 2"></a-text>
         </a-entity>
-
-	<!-- CAMERA -->
         <a-camera-static></a-camera-static>
-
     </a-scene>
 </body>
 </html>
+In this modified code, I've manually added <br> tags in the text to create line breaks. This will make the text wrap within the specified space on the box. Adjust the line breaks as needed to format your text appropriately.
+
+
+
+
+
