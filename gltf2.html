@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test 1 GLTF 20231011</title>
+<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+</head>
+
+  <body style="margin: 0; overflow: hidden;">
+
+	<a-scene 
+	  vr-mode-ui='enabled: false' 
+	  arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' 	
+	  renderer='antialias: true; alpha: true'>
+
+        <!-- Camera -->
+   	<a-camera 
+	  id="camera1" 
+	  gps-new-camera='gpsMinDistance: 3' >
+	</a-camera>
+
+        <!-- Geolocation entity -->
+   	 <a-entity 
+	  gps-new-entity-place="latitude: -34.994176843135364; longitude: 138.62641997298257;">
+ 		<!-- GLTF model with animations -->
+		<a-gltf-model 
+		  src="/assets/cakegorl_collada.gltf" 
+		  position="0 -4 -4" 
+		  scale="0.05 0.05 0.05"
+		  material="red">
+            </a-gltf-model>
+
+	 </a-entity>
+	</a-scene>
+</body>
+</html>
+
+
+
+
+
+
+
