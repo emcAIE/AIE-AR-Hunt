@@ -1,32 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Test 23 20231010</title>
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
-    <script src="https://github.com/AR-js-org/AR.js/tree/master/aframe/build/aframe-ar-new-location-only.js"></script>
+<title>Test 1 20231011</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
 </head>
 <body>
-    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-
-        <!-- Fixed camera 
-        <a-entity id="fixed-camera" camera position="0 1.6 0" look-controls></a-entity>
-	-->
-
-        <!-- Updated camera -->
-	<a-camera id='camera1' look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 3'> </a-camera>
+	<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+   	 <a-camera gps-new-camera='gpsMinDistance: 3'></a-camera>
 
         <!-- Geolocation entity -->
-        <a-entity id="geolocation-entity" gps-new-entity-place="latitude: -34.9942069326562; longitude: 138.62660484713578;">
-
-            <!-- Text object on the box with line breaks -->
-            <a-text value="Amidst the greenery, a Victorian grace,\nA glassy gem, a tropical embrace." position="0 0 -6" color="black" align="center" scale="0.5 0.5 0.5"  wrap-count="15"></a-text>
-
-            <!-- Create a box for the text -->
-            <a-box position="0 0 -6.2" width="3" height="2" depth="0.1" color="white"></a-box>
-        </a-entity>
-
-    </a-scene>
+   	 <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: -34.99417279399643; longitude: 138.6263819673702;" scale="10 10 10">
+		<!-- Text object with line breaks -->
+		<a-text value="Amidst the greenery, a Victorian grace,\nA glassy gem, a tropical embrace." position="0 0 -6" color="black" align="center" scale="0.5 0.5 0.5"  wrap-count="15">
+		</a-text>
+	 </a-entity>
+	</a-scene>
 </body>
 </html>
+
