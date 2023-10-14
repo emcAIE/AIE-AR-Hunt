@@ -29,13 +29,42 @@
 });
 	</script>
 
+<script>
+AFRAME.registerComponent("fov-change", {
+        init: function () {
+          // grab the camera
+          const cam = document.querySelector("[camera]");
+          // this.el should also work for this as long as your fov-change component is on the camera
+          // grab the current FOV, this will be 80 as that's the default for aframe
+          const fov = cam.getAttribute("camera").fov;
+          console.log("Wow, fov is ", fov);
+          // update the camera with the new FOV
+          // if holding portrait use 61:
+          // cam.setAttribute("camera", "fov", 61)
+
+          // For whatever weird reason it seems that chrome and firefox use different fov values?
+          if (navigator.userAgent.indexOf("Chrome") != -1) {
+            cam.setAttribute("camera", "fov", 87);
+          } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+            // For landscape, 45 on the ipad, 52.75 for the samsung
+            cam.setAttribute("camera", "fov", 52.75);
+          } else {
+            // Don't really know what other browsers use, but most will be chromium I suppose?
+            cam.setAttribute("camera", "fov", 87);
+          }
+
+          console.log("Wow, fov is now", document.querySelector("[camera]").getAttribute("camera").fov);
+        },
+      });
+</script>
+
 	<a-scene 
 	  vr-mode-ui='enabled: false' 
 	  arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' 	
 	  renderer='antialias: true; alpha: true'>
 
         <!-- Camera -->
-   	 <a-camera id="camera1" gps-new-camera='gpsMinDistance: 5' rotation-reader></a-camera>
+   	 <a-camera fov-change id="camera1" gps-new-camera='gpsMinDistance: 5' rotation-reader></a-camera>
 
         <!-- Geolocation entity -->
    	 <a-entity id="textclue"
