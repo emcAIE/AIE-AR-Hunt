@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test 3 20231014</title>
+<title>Test 1 James Place 20231016</title>
+
+<!-- A-Frame itself -->
 <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
-<script type='text/javascript' src='https://hikar.org/loc-fix/aframe-ar-nft.js'></script>
+
+<!-- Pure three.js code that the A-Frame components use for location-based AR -->
+<script type='text/javascript' src='./scripts/ar-threex-location-only.js'></script>
+
+<!-- AR.js A-Frame components -->
+<script type='text/javascript' src='./scripts/aframe-ar.js'></script>
+
 </head>
 
   <body style="margin: 0; overflow: hidden;">
@@ -29,34 +36,8 @@
 });
 	</script>
 
-<script>
-AFRAME.registerComponent("fov-change", {
-        init: function () {
-          // grab the camera
-          const cam = document.querySelector("[camera]");
-          // this.el should also work for this as long as your fov-change component is on the camera
-          // grab the current FOV, this will be 80 as that's the default for aframe
-          const fov = cam.getAttribute("camera").fov;
-          console.log("Wow, fov is ", fov);
-          // update the camera with the new FOV
-          // if holding portrait use 61:
-          // cam.setAttribute("camera", "fov", 61)
 
-          // For whatever weird reason it seems that chrome and firefox use different fov values?
-          if (navigator.userAgent.indexOf("Chrome") != -1) {
-            cam.setAttribute("camera", "fov", 87);
-          } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-            // For landscape, 45 on the ipad, 52.75 for the samsung
-            cam.setAttribute("camera", "fov", 52.75);
-          } else {
-            // Don't really know what other browsers use, but most will be chromium I suppose?
-            cam.setAttribute("camera", "fov", 87);
-          }
 
-          console.log("Wow, fov is now", document.querySelector("[camera]").getAttribute("camera").fov);
-        },
-      });
-</script>
 
 	<a-scene 
 	  vr-mode-ui='enabled: false' 
@@ -64,11 +45,11 @@ AFRAME.registerComponent("fov-change", {
 	  renderer='antialias: true; alpha: true'>
 
         <!-- Camera -->
-   	 <a-camera fov-change id="camera1" gps-projected-camera='gpsMinDistance: 1' rotation-reader></a-camera>
+   	 <a-camera id="camera1" gps-projected-camera='gpsMinDistance: 1' rotation-reader></a-camera>
 
         <!-- Geolocation entity -->
    	 <a-entity id="textclue"
-	  gps-projected-entity-place="latitude: -34.994176843135364; longitude: 138.62641997298257;" 
+	  gps-projected-entity-place="latitude: -34.92419664483271; longitude: 138.60076043643565;" 
 	  scale="200 200 200" 
 	  look-at="camera1">
 		<!-- Text object with line breaks -->
