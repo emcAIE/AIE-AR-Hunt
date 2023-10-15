@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Test 2 20231015</title>
+<title>Test 4 20231015</title>
+
+<!-- A-Frame itself -->
 <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+<!-- Pure three.js code that the A-Frame components use for location-based AR -->
 <script type='text/javascript' src='./scripts/ar-threex-location-only.js'></script>
+
+<!-- AR.js A-Frame components -->
 <script type='text/javascript' src='./scripts/aframe-ar.js'></script>
 </head>
 
@@ -38,7 +44,7 @@
    	 <a-camera id="camera1" gps-new-camera='gpsMinDistance: 1' rotation-reader></a-camera>
 
         <!-- Geolocation entity -->
-   	 <a-entity gps-new-entity-place="latitude: -34.99421338940105; longitude: 138.6265921871485;"
+   	 <a-entity gps-projected-entity-place="latitude: -34.99421338940105; longitude: 138.6265921871485;"
 	  scale="20 20 20" 
 	  look-at="camera1">
 		<!-- Text object with line breaks -->
