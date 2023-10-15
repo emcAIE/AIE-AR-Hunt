@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test 1 20231015</title>
+<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+</head>
+
+  <body style="margin: 0; overflow: hidden;">
+
+	<!-- Rotation Reader Script Component for Camera, called in a-camera -->
+	<script>
+	AFRAME.registerComponent('rotation-reader', {
+  /**
+   * We use IIFE (immediately-invoked function expression) to only allocate one
+   * vector or euler and not re-create on every tick to save memory.
+   */
+  tick: (function () {
+    var position = new THREE.Vector3();
+    var quaternion = new THREE.Quaternion();
+
+    return function () {
+      this.el.object3D.getWorldPosition(position);
+      this.el.object3D.getWorldQuaternion(quaternion);
+      // position and rotation now contain vector and quaternion in world space.
+    };
+  })()
+});
+	</script>
+
+	<a-scene 
+	  vr-mode-ui='enabled: false' 
+	  arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' 	
+	  renderer='antialias: true; alpha: true'>
+
+        <!-- Camera -->
+   	 <a-camera id="camera1" gps-new-camera='gpsMinDistance: 1' rotation-reader></a-camera>
+
+        <!-- Geolocation entity -->
+   	 <a-entity gps-new-entity-place="latitude: -34.99421338940105; longitude: 138.6265921871485;"
+	  scale="20 20 20" 
+	  look-at="camera1">
+		<!-- Text object with line breaks -->
+		<a-text 
+		  value="Home Test" 
+		  position="0 0 -6" 
+		  color="black" 
+		  align="center" 
+		  scale="0.5 0.5 0.5"  
+		  wrap-count="15">
+		</a-text>
+
+		<!-- Create a box for the text -->
+		<a-box 
+		  position="0 0 -6.2" 
+		  width="3" height="2" depth="0.1" 
+		  color="white">
+		</a-box>
+
+	 </a-entity>
+	</a-scene>
+</body>
+</html>
