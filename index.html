@@ -45,7 +45,16 @@
 	  renderer='antialias: true; alpha: true'>
 
         <!-- Camera -->
-   	 <a-camera id="camera1" gps-projected-camera='gpsMinDistance: 1' rotation-reader></a-camera>
+   	 
+<!-- OLD CAMERA <a-camera id="camera1" gps-projected-camera='gpsMinDistance: 1' rotation-reader></a-camera> -->
+
+	 <a-camera 
+	   id='camera1' 
+	   look-controls-enabled='false' 
+	   arjs-look-controls='smoothingFactor: 0.1' 
+	   gps-projected-camera='gpsMinDistance: 2' 
+	   rotation-reader> 
+	 </a-camera>
 
         <!-- Geolocation entity -->
    	 <a-entity id="textclue"
